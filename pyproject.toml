@@ -1,0 +1,8 @@
+[project]
+name = "rdf-dump-reader"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = ["rdflib>=7.0"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
