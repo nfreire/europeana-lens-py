@@ -6,6 +6,14 @@ import rdflib
 from rdf_dump_reader.reader import InvalidURIError, RDFDumpReader
 
 
+def test_package_exports_public_api():
+    from rdf_dump_reader import RDFDumpReader as PackageReader
+    from rdf_dump_reader import Record
+
+    assert PackageReader is RDFDumpReader
+    assert Record.__name__ == "Record"
+
+
 def _write_zip(path, entries):
     with zipfile.ZipFile(path, "w") as archive:
         items = entries.items() if isinstance(entries, dict) else ((name, None) for name in entries)
